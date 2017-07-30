@@ -14,7 +14,7 @@ laravel フレームワークで、メールサーバー接続「IMAP」「POP3�
 ```
 ``` php
     'providers' => [
-        Shigetaa\Iamp\IampServiceProvider::class,
+        Shigetaa\Imap\Providers\ImapServiceProvider::class,
     ],
 ```
 

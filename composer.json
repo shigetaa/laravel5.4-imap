@@ -1,0 +1,19 @@
+{
+    "name": "shigetaa/laravel5.4-imap",
+    "description": "Mail Server Connection for Laravel Framework",
+    "keywords": ["laravel","imap","pop3","mail"],
+    "homepage": "https://github.com/shigetaa/laravel5.4-imap",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akira Shigeta",
+            "email": "akira.shigeta@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "Shigetaa\\Imap\\": "src/"
+        }
+    },
+    "require": {}
+}
