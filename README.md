@@ -7,3 +7,14 @@ laravel フレームワークで、メールサーバー接続「IMAP」「POP3�
 ``` bash
 # composer require shigetaa/laravel5.4-imap
 ```
+
+## 設定ファイルのprovidersに追記します。 
+``` bash
+# vim config/app.php
+```
+``` php
+    'providers' => [
+        Shigetaa\Iamp\IampServiceProvider::class,
+    ],
+```
+
