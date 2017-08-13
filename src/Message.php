@@ -313,13 +313,24 @@ class Message
 
     private function getEncoding($structure)
     {
+        $external_charset = array(
+            'SHIFT_JIS' => 'SJIS-win',
+            'SJIS' => 'SJIS-win',
+            'EUC-JP' => 'eucJP-win',
+            'ISO-2022-JP' => 'ISO-2022-JP-KDDI'
+        );
+        $charset = '';
         if (property_exists($structure, 'parameters')) {
             foreach ($structure->parameters as $parameter) {
-                if ($parameter->attribute == "charset") {
-                    return strtoupper($parameter->value);
+                if (strtoupper($parameter->attribute) == "CHARSET") {
+                    $charset = strtoupper($parameter->value);
                 }
             }
         }
+        if (array_key_exists(strtoupper($charset),$external_charset)) {
+            $charset = $external_charset[strtoupper($charset)];
+        }
+        return $charset;
     }
     
     public function setFlag($flag) {
